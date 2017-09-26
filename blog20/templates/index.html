@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block header %}
+<header class="masthead" style="background-image: url('https://www.ventureharbour.com/wp-content/uploads/2014/03/blog-header.jpg')">
+{% endblock %}
+
+{% block site-heading %}
+    <h1>Otro Blog</h1>
+    <span class="subheading">Un blog sencillo <small>(mas)</small></span>
+{% endblock %}
+
+{% block content %}
+    <!-- Main Content -->
+
+        {% for entrada in object_list %}
+          <div class="post-preview">
+            <a href="/entrada/{{entrada.slug}}/">
+              <h2 class="post-title">
+                {{ entrada.titulo }}
+              </h2>
+              <h3 class="post-subtitle">
+                {{ entrada.subtitulo }}
+              </h3>
+            </a>
+            <p class="post-meta">Posteado por
+              <a href="#">{{ entrada.user }}</a>
+              el {{ entrada.pub_date }}</p>
+          </div>
+        <hr>
+        {% endfor %}
+        
+          
+    
+
+          <!-- Pager
+          <div class="clearfix">
+            <a class="btn btn-secondary float-right" href="#">Posts Mas Viejos &rarr;</a>
+          </div> -->
+
+    
+
+{% endblock %}

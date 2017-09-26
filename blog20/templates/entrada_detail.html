@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+<!--
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script charset="UTF-8"></script>
+    <title>Detalle Entrada</title>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+</head>
+-->
+{% block title %}{{ object.titulo }}{% endblock %}
+
+{% block header %}
+<header class="masthead" style="background-image: url('http://jonvilma.com/images/spaceship-9.jpg')">
+{% endblock %}
+
+{% block site-heading %}
+    <h1>{{ object.titulo }}</h1>
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <h3>{{ object.subtitulo }}</h3><hr>
+    <p>{{ object.contenido|safe }}</p><hr>
+    <h5>Posteado por <a href="#">{{entrada.user}}</a>, el {{ object.pub_date }}</h5><hr>
+    <p color='red'>Advertencia: usted va a ver un plugin de Disqus que corresponde a otro sitio web, y dirije los comentarios a dicho sitio. La razón es simple: Disqus es un plugin excelente, pero demanda registración, cuando éste es sólo un blog de muestra, totalmente inactivo, así que voy a pasar de registrarme, y voy a incorporar éste plugin de otro sitio sólo a modo de demostración de cómo se vería el sitio con tal. Gracias por la comprensión ;)</p>
+    <div id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://simpleisbetterthancomplex.com/article/2017/03/21/class-based-views-vs-function-based-views.html';
+        this.page.identifier = '/article/2017/03/21/class-based-views-vs-function-based-views';
+      };
+      (function() {
+      var d = document, s = d.createElement('script');
+      s.src = '//simpleisbetterthancomplex.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <script id="dsq-count-scr" src="{% static 'blog20/count.js' %}" async></script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+
+
+
+</div>
+
+<!--</html>-->
+{% endblock %}
+
